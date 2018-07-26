@@ -1,0 +1,191 @@
+{{!-- <h1>Hello</h1>
+{{!--
+  Show |-------------|
+       | title       |
+       | desciption  |
+       |-------------|
+       | body
+       | ------      |
+       |comments
+       ---------------
+
+
+{{posts.name}}
+{{posts.title}} --}}
+
+{{!-- <div class="row">
+  <div class="col-md-8 mt-5">
+    <h1>{{posts.title}}</h1>
+    <p class="lead">By {{posts.name}}</p>
+    <hr>
+    <p class="lead">{{posts.description}}</p>
+    <p>Posted on {{posts.date}}</p>
+    <hr>
+    <p>{{posts.body}}</p>
+    <hr>
+
+  <div class="col-md-4 mt-5">
+    <div class="card card-body">
+      <h3>More Posts from {{posts.name}}</h3>
+      <ol>
+        {{#each userPosts}}
+        <li><a href="/posts/{{id}}">
+          {{title}}
+          </a>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+</div> --}}
+
+{{!-- <div class="container">
+  <div class="post-wrapper">
+
+    <h3>{{posts.title}}</h3>
+
+    <p class="text-muted post-info"><i class="fa fa-user"></i> {{posts.name}} | <i class="fa fa-clock"></i> {{posts.date}}</p>
+
+    <img src="{{posts.img}}" alt="" class="img-fluid">
+    <p class="post-body">{{posts.body}}</p>
+    <hr>
+    <div class="comments">
+    <h4>Comments</h4>
+    <form action="/posts/{{id}}" method="post">
+      <textarea name="commentBox" rows="4" cols="50" placeholder="Post a comment!" required></textarea>
+      <button type="submit" class="btn btn-success d-block">Submit</button>
+    </form>
+    <hr>
+    {{#each comments}}
+      <p>{{body}}</p>
+      <p>posted by: {{name}} on {{date}}</p>
+      <hr>
+    {{/each}}
+    </div>
+  </div>
+  </div>
+</div> --}}
+<div class="main mt-3 pt-3">
+  {{!-- Container --}}
+  <div class="container">
+
+    {{!-- Post Section --}}
+    <section class="post">
+
+      {{!-- Grid --}}
+      <div class="row">
+
+        {{!-- Left Side Content --}}
+        <div class="col-md-7">
+
+          {{!-- Hero Pic --}}
+          <div class="card mb-4 dropshadowclass">
+            <img src="{{posts.img}}" alt="" class="img-fluid blog-img">
+          </div>
+          {{!-- End Hero Pic --}}
+
+          {{!-- Post --}}
+          <div class="card mb-4">
+            <div class="card-title text-center mt-4 ">
+              <h3>{{posts.title}}</h3></div>
+            <hr class="style-hr">
+            <div class="card-body">
+              {{{posts.body}}}
+            </div>
+          </div>
+          {{!-- End Post --}}
+
+          {{!-- About Author --}}
+          <div class="card mb-4">
+            <div class="card-header">
+              <span>About Author </span>
+              <span class="float-right">
+                  <a href="">
+                    <i class="fab fa-facebook-f mr-2"></i>
+                  </a>
+                  <a href="">
+                    <i class="fab fa-twitter mr-2"></i>
+                  </a>
+                  <a href="">
+                    <i class="fab fa-instagram mr-2"></i>
+                  </a>
+                  <a href="">
+                    <i class="fab fa-linkedin mr-2"></i>
+                  </a>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="media mt-3 d-block d-md-flex">
+                <img src="{{author.pic}}" alt="Stock image of person" class="d-flex mb-3 mx-auto dropshadowclass img-fluid author-pic">
+                <div class="media-body mt-0 text-center text-md-left ml-md-3 ml-0">
+                  <h5 class="font-weight-bold">{{author.name}}</h5> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptas ex eius ab magnam ut dolorem quidem, maiores quod eos possimus accusamus fugit est numquam.
+                </div>
+              </div>
+            </div>
+          </div>
+          {{!-- End About Author --}}
+
+          {{!-- Comment --}}
+          <div class="card mb-4">
+            <div class="card-header">
+              <span># Comments</span>
+            </div>
+            <div class="card-body">
+              <form action="/posts/{{id}}" method="POST">
+                <label for="commentBox" class="text-center">Your Comment</label>
+                <textarea class="d-block form-control mceNoEditor" name="commentBox" placeholder="Post a comment!" rows="3" cols="60"></textarea>
+                <div class="text-center">
+                  <button type="submit" class="button-dropshadow mt-2 btn btn-sm btn-info ">Post</button>
+                </div>
+              </form>
+
+              {{#each comments}}
+                <hr class="style-hr">
+                <div class="media d-block mt-3 d-md-flex">
+                  <img src="{{userPic}}" alt="Stock image of person" class="d-flex mb-3 mx-auto dropshadowclass img-fluid comment-pic">
+                  <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                    <h5 class="font-weight-bold">{{name}}</h5>
+                    <p class="d-block comment-date text-muted"><i class="fa fa-clock"></i> {{date}}</p>
+                    <p>{{body}}</p>
+
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          {{!-- End Comments --}}
+        </div>
+        {{!-- End Left Side Content --}}
+
+        {{!--Right side Content--}}
+        <div class="col-md-5">
+
+          {{!-- More Posts --}}
+
+          <div class="card card-body sticky-top mt-4 recent">
+            <h4 class="text-center">More posts from {{posts.name}}</h4>
+            <ol style="margin-left: 10px">
+              {{#each userPosts}}
+              <li><a href="/posts/{{id}}">
+                {{title}}
+                </a>
+              </li>
+              {{/each}}
+            </ol>
+          </div>
+          </div>
+
+        </div>
+        {{!-- End Right Side Content--}}
+
+      </div>
+      {{!-- End Grid --}}
+
+    </div>
+    {{!-- End Container--}}
+
+  </section>
+  {{!-- End Post Section --}}
+
+</div>
+{{!-- End Main--}}

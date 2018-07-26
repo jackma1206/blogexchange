@@ -1,0 +1,59 @@
+{{!-- <h1 class="mt-5">My posts</h1>
+<div class="row mt-3 mx-auto">
+  {{#each posts}}
+
+      <div class="col-md-12 mx-auto m-2" style="border: 1px solid black">
+      <h4 class="pt-3 px-3">{{title}}</h4>
+      <p class="lead px-3">{{description}}</p>
+      <p class="float-right">Author: {{name}}</p>
+      <a href="/posts/{{id}}" class="px-3">Read More ...</a>
+      <br>
+      <a href="/posts/edit/{{id}}" class="btn btn-success">Edit</a>
+      <form action="/posts/{{id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger d-block" value="Delete">
+      </form>
+    </div>
+  {{else}}
+    <p>no posts yet</p>
+  {{/each}}
+</div>
+
+ --}}
+
+<div class="row mt-3 blog-index-show">
+  {{#each posts}}
+    <div class="col-md-6 mx-auto">
+
+      <div class="card index-card mb-3">
+        <div class="card-title">
+          <h4 class="pt-3 px-3">{{title}}</h4>
+        </div>
+        <img src="{{img}}" class="blog-img card-img-top img-fluid">
+        <div class="card-body">
+          <p class="lead description-index">{{{description}}}</p>
+
+          <p class="text-muted user-info-index">
+            <i class="fa fa-user"></i> {{name}}
+          </p>
+          <p class="text-muted date-index">
+            <i class="fa fa-clock"></i> {{date}}
+          </p>
+
+          <form action="/posts/{{id}}?_method=DELETE" method="POST" class="d-inline">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-outline-danger float-right btn-sm mx-1" value="Delete">
+          </form>
+
+          <a class="btn btn-outline-secondary btn-sm float-right mx-1" href="/posts/{{id}}">Read More</a>
+
+          <a href="/posts/edit/{{id}}" class="btn btn-outline-success btn-sm float-right mx-1">Edit</a>
+
+        </div>
+      </div>
+
+    </div>
+    {{else}}
+      <h3 class="text-center">no new posts</h3>
+</div>
+{{/each}}

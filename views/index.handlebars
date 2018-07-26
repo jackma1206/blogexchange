@@ -1,0 +1,60 @@
+<div class="wholepage">
+  <div class="center w-50">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item w-50">
+        <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+      </li>
+      <li class="nav-item w-50 float-right">
+        <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+        <div class="row mt-5 mx-auto">
+          <div class="col-lg-6 col-md-6 mx-auto">
+            <form action="/users/login" method="POST">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-success btn-block">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+        <div class="row mx-auto mt-4">
+          <div class="col-lg-6 col-md-6 mx-auto">
+            <form action="/users/register" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" value="{{name}}" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" value="{{email}}" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" value="{{password}}" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" name="password2" class="form-control" value="{{password2}}" required>
+              </div>
+              <div class="form-group">
+                <label for="pic">Upload Picture</label>
+                <input type="text" class="form-control" name="pic" value="{{pic}}" required>
+              </div>
+              <button type="submit" class="btn btn-success btn-block">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
