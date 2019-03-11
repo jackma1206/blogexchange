@@ -62,7 +62,7 @@ router.post("/register", (req, res) => {
               newUser
                 .save()
                 .then(user => {
-                  res.redirect("/");
+                  res.redirect("/signin");
                 })
                 .catch(err => {
                   console.log(err);
@@ -74,7 +74,6 @@ router.post("/register", (req, res) => {
       }
     });
   }
-  res.redirect("/signin");
 });
 
 //logout
