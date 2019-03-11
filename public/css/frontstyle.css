@@ -1,0 +1,90 @@
+.wholepage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?cs=srgb&dl=adult-application-asian-733856.jpg&fm=jpg");
+  background-size: cover;
+}
+
+.signup {
+  position: absolute;
+  width: 500px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+
+.header {
+  padding: 20px 16px;
+}
+
+.signup h1 {
+  font-family: "Pinyon Script", cursive;
+  font-size: 5.3rem;
+  letter-spacing: 1px;
+  color: #fff;
+  font-weight: 900px;
+  text-shadow: 0px 0px 3px #000;
+}
+.header a {
+  display: inline-block;
+  float: right;
+  color: #fff;
+  text-shadow: 0px 0px 3px #000;
+}
+
+.signup h2 {
+  font-size: 1.25rem;
+}
+
+.signup p {
+  color: #444;
+}
+.dropshadowclass,
+.card {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* LOGIN PAGE CSS */
+
+.login-wholepage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+.login {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 250px;
+}
+.login h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.goReg {
+  margin-top: 20px;
+  height: 75px;
+  border: 1px solid #dce1ef;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.goReg p {
+  padding-top: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.goReg a {
+  margin-top: 0;
+}
