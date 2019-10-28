@@ -1,4 +1,4 @@
-# blogexchange
+# Blog Exchange
 
 This is a node/express blog app for multiple users with registration/login functionality as well as commenting and adding/editing/deleting of posts.
 
